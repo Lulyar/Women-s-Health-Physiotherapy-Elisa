@@ -1,8 +1,8 @@
-var SPREADSHEET_ID = "MASUKKAN_ID_SPREADSHEET_DISINI"; // Ganti dengan ID Spreadsheet Anda
+var SPREADSHEET_ID = "1GdbIcDAW-heVaUiKSpBndP1fRMXjAH5Jy_QQfHmWra8"; 
 
 function doGet() {
   return HtmlService.createHtmlOutputFromFile('index')
-      .setTitle('Klinik Ceri Fisio')
+      .setTitle("Women's Health Physiotherapy")
       .addMetaTag('viewport', 'width=device-width, initial-scale=1')
       .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
