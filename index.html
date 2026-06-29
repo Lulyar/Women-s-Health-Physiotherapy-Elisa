@@ -2065,7 +2065,7 @@ table.data-table tr:hover td {
       </div>
       
       <div class="nav-actions">
-        <a href="https://wa.me/6281234567890?text=Hallo%20Fisioterapi%20Elisa,%20Saya%20ingin%20berkonsultasi....." target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/6285601129203?text=Hallo%20Fisioterapi%20Elisa,%20Saya%20Memiliki%20Keluhan......" target="_blank" class="btn btn-whatsapp">
           <iconify-icon icon="mdi:whatsapp" style="font-size: 1.25rem;"></iconify-icon>
           Chat WhatsApp
         </a>
@@ -2088,7 +2088,7 @@ table.data-table tr:hover td {
       <a href="#layanan" onclick="toggleMobileNav()" style="color: var(--color-cream); text-decoration: none; font-size: 1.5rem; font-weight: 600;">Layanan</a>
       <a href="#alur" onclick="toggleMobileNav()" style="color: var(--color-cream); text-decoration: none; font-size: 1.5rem; font-weight: 600;">Alur Pendaftaran</a>
       <a href="#profil" onclick="toggleMobileNav()" style="color: var(--color-cream); text-decoration: none; font-size: 1.5rem; font-weight: 600;">Profil Fisioterapis</a>
-      <a href="https://wa.me/6281234567890?text=Hallo%20Fisioterapi%20Elisa,%20Saya%20ingin%20berkonsultasi....." target="_blank" class="btn btn-whatsapp" style="width: 80%; max-width: 300px;">
+      <a href="https://wa.me/6285601129203?text=Hallo%20Fisioterapi%20Elisa,%20Saya%20Memiliki%20Keluhan......" target="_blank" class="btn btn-whatsapp" style="width: 80%; max-width: 300px;">
         <iconify-icon icon="mdi:whatsapp" style="font-size: 1.25rem;"></iconify-icon>
         Chat WhatsApp
       </a>
@@ -2765,7 +2765,7 @@ table.data-table tr:hover td {
               </div>
               <div class="form-group">
                 <label>Nomor WhatsApp Link Terhubung</label>
-                <input type="text" id="setup-clinic-wa" class="form-input" value="https://wa.me/6281234567890" required>
+                <input type="text" id="setup-clinic-wa" class="form-input" value="https://wa.me/6285601129203?text=Hallo%20Fisioterapi%20Elisa,%20Saya%20Memiliki%20Keluhan......" required>
               </div>
               <div class="form-group">
                 <label>Alamat Lengkap</label>
@@ -4943,7 +4943,7 @@ const DEFAULT_DB = {
   clinicProfile: {
     name: "Women's Health Physiotherapy",
     owner: 'Elisa Febi Anjani S.Fis, Ftr, M.Si, PhD',
-    wa: 'https://wa.me/6281234567890',
+    wa: 'https://wa.me/6285601129203?text=Hallo%20Fisioterapi%20Elisa,%20Saya%20Memiliki%20Keluhan......',
     address: 'JL.Diponegoro No 67, Dusun Kembon, Desa Pekiringan Alit, Kecamatan Kajen, Kabupaten Pekalongan Jawa Tengah',
     maps: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.610582046898!2d109.58572457488554!3d-7.054972992947355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fdee3d4411139%3A0xe21f7c8ecadbbdbe!2sJl.%20Diponegoro%2C%20Pekiringan%20Alit%2C%20Kec.%20Kajen%2C%20Kabupaten%20Pekalongan%2C%20Jawa%20Tengah%2051161!5e0!3m2!1sid!2sid!4v1719650000000!5m2!1sid!2sid'
   }
@@ -4982,6 +4982,10 @@ function initDatabase() {
         }
         if (AppState.data.clinicProfile && (AppState.data.clinicProfile.name === 'Klinik Ceri Fisio' || AppState.data.clinicProfile.name === "Women's Health Physiotherapy Elisa")) {
           AppState.data.clinicProfile.name = "Women's Health Physiotherapy";
+          needsFix = true;
+        }
+        if (AppState.data.clinicProfile && (AppState.data.clinicProfile.wa === 'https://wa.me/6281234567890' || !AppState.data.clinicProfile.wa.includes('6285601129203'))) {
+          AppState.data.clinicProfile.wa = "https://wa.me/6285601129203?text=Hallo%20Fisioterapi%20Elisa,%20Saya%20Memiliki%20Keluhan......";
           needsFix = true;
         }
         if (needsFix) {
